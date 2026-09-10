@@ -12,4 +12,11 @@ The one-decimal rounding originated in commit
 should lose its encoded half-tenth steps. Avoiding floating-point display
 artifacts is a possible explanation, not a documented rationale.
 
+Aranet's published HOME datasheet also specifies 0.1 °C temperature resolution
+and ±0.3 °C accuracy. Matching the published resolution is another plausible
+explanation, but the commit and discussion do not establish that connection.
+Preserving the finer encoded data does not imply 0.05 °C measurement accuracy.
+
+Datasheet: https://assets.aranet.com/documents/Aranet_Datasheet_TDSPC0H3_Aranet4_HOME_1.pdf
+
 Run regression tests with `python -m pytest`.
