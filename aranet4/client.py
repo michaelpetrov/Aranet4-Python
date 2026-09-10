@@ -348,7 +348,7 @@ class CurrentReading:
         }
 
     @staticmethod
-    def _set(param: Param, value: int):
+    def _set(param: Param, value: int) -> int | float:
         """
         While in CO2 calibration mode Aranet4 did not take new measurements and
         stores Magic numbers in measurement history.
@@ -389,6 +389,9 @@ class CurrentReading:
 
         if invalid_reading_flag:
             return -1
+        if param == Param.TEMPERATURE:
+            # Preserve every 0.05 °C step without multiplication artifacts.
+            return value / 20
         if isinstance(multiplier, float):
             return round(value * multiplier, 1)
         return value * multiplier

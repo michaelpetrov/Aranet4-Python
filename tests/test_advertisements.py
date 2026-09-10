@@ -77,7 +77,7 @@ class DataManipulation(unittest.TestCase):
         self.assertEqual(AranetType.ARANET4, ad.readings.type)
         self.assertEqual("Aranet4", ad.readings.type.model)
         self.assertEqual(1091, ad.readings.co2)
-        self.assertEqual(20.8, ad.readings.temperature)
+        self.assertEqual(20.75, ad.readings.temperature)
         self.assertEqual(53, ad.readings.humidity)
         self.assertEqual(1012.3, ad.readings.pressure)
         self.assertEqual(12, ad.readings.battery)
@@ -92,7 +92,7 @@ class DataManipulation(unittest.TestCase):
 
         self.assertEqual(AranetType.ARANET2, ad.readings.type)
         self.assertEqual("Aranet2", ad.readings.type.model)
-        self.assertEqual(20.5, ad.readings.temperature)
+        self.assertEqual(20.45, ad.readings.temperature)
         self.assertEqual(52.2, ad.readings.humidity)
         self.assertEqual(59, ad.readings.battery)
         self.assertEqual(82, ad.readings.ago)
